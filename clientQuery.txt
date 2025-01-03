@@ -1,0 +1,51 @@
+# Write your query or mutation here
+query getAllUser {
+  users {
+    email
+    name
+    id
+  }
+}
+
+
+# Write your query or mutation here
+query getquotes {
+  quots {
+   by
+    name
+  }
+}
+
+
+# Write your query or mutation here
+query getAllUser {
+  users {
+    email
+    name
+    id,
+    quots{
+      name
+      by
+    }
+  }
+  
+}
+
+
+# Write your query or mutation here
+query userAll {
+  user(id:"2"){
+    name
+    email
+    quots{
+      name
+    }
+  }
+}
+
+# Write your query or mutation here
+query quotsByUser($id:ID!) {
+  quotsByUser(by:$id){
+    name
+  }
+}
