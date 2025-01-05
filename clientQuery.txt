@@ -49,3 +49,18 @@ query quotsByUser($id:ID!) {
     name
   }
 }
+
+mutation createUser ($newUser:UserInput!){
+  addUser(UserInput:$newUser){
+    id
+    name
+    email
+  }
+}
+
+mutation {
+  addUser(name:"jdddssname", email:"juggsss@gmail.com", password:"ssdfsdfs"){
+	name
+    id
+  }
+}

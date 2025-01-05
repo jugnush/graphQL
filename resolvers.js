@@ -14,15 +14,14 @@ import { randomBytes } from 'crypto'
         }
     },
     Mutation: {
-        addUser: (parent, {newUser}) => {
-            const id = randomBytes(5).toString('hex')
-
-            users.push(
-                {
-                    id,
-                    ...newUser
-                }
-            )
+        addUser: (parent, args) => {
+            const newUser = {
+                id: randomBytes(5).toString('hex'),
+                name: args.name,
+                email: args.email,
+                password: args.password
+            }
+            users.push(newUser)
             return users.find(user => user.id === newUser.id)
         }
     }

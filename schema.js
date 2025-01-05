@@ -19,12 +19,13 @@ type QuotType {
         }
 
 type Mutation {
-    addUser(newUser:UserInput!): UserType
+    addUser(name: String!, email: String!, password: String!): UserType
 }
 
 input UserInput {
     name: String!
     email: String!
+    password: String!
 }
   `
 export default typeDefs
